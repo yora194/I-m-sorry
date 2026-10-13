@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>انا اسفه من قلبي ي يوسف</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f5, #f8c8dc);
+  color: #7a2448;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  min-height: 450px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 25px;
+  padding: 30px 22px;
+  box-shadow: 0 10px 35px rgba(160, 50, 100, 0.18);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 27px;
+  margin-bottom: 25px;
+  color: #c04479;
+}
+
+.message {
+  font-size: 20px;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 10px 0 25px;
+  min-height: 180px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 28px;
+  font-size: 17px;
+  cursor: pointer;
+  background: #d94f89;
+  color: white;
+  margin: 5px;
+}
+
+button:hover {
+  background: #bb3971;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.heart {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="heart">♥️</div>
+
+  <div id="page0" class="page active">
+    <h1>انا اسفه من قلبي ي يوسف</h1>
+    <button onclick="nextPage()">ابدأ</button>
+  </div>
+
+  <div id="page1" class="page">
+    <div class="message">انا عارفه انك زعلان وكارهني دلوقتي أن مكنتش بتفكر اصلا تنفصل عني بس انا مش عارفه ابدأ منين ولا اقول ايه</div>
+    <button onclick="nextPage()">التالي</button>
+  </div>
+
+  <div id="page2" class="page">
+    <div class="message">معنديش تبرير للي عملته عارفاك زهقت من نفس الكلام كل شويه وحقك انا مش اجبرك تسامحني بس اتمنى تسامحني</div>
+    <button onclick="nextPage()">التالي</button>
+  </div>
+
+  <div id="page3" class="page">
+    <div class="message">يوسف انا اسفه وحقك عليا ي عيوني وغلاوت بابا ي يوسف كنت هقولك بس لقيتك وقتها بتقولي تعمل يككا لما ننفصل ف خوفت قوي</div>
+    <button onclick="nextPage()">التالي</button>
+  </div>
+
+  <div id="page4" class="page">
+    <div class="message">وغلاوتك مسحت الاك من وقت م لقيتك كدا معرفش انك هتلاقيه بس بامانه كنت هقولك عليه بس مش عارفه امتى بس كنت هقولك</div>
+    <button onclick="nextPage()">التالي</button>
+  </div>
+
+  <div id="page5" class="page">
+    <div class="message">انا اسفه وحقك على عيوني ي قلبي وانت ليك الاختيار ي حبيبي تسامحني أو لا وهيكون حقك وقتها بس اتمنى متفكرش تنفصل عني علشان انت عارف انت ايه</div>
+    <button onclick="nextPage()">التالي</button>
+  </div>
+
+  <div id="page6" class="page">
+    <div class="message">مش قادره اقول حاجه تاني غير أن مهما غلطت صدقني مش ينكر حبي ليك وعشقي بحبك ي نور عيوني ♥️♥️</div>
+    <button onclick="nextPage()">التالي</button>
+  </div>
+
+  <div id="page7" class="page">
+    <div class="message">اسفه مليون مره عارفه مش يفيد ب حاجه بس انا معترفه بغلطي</div>
+    <button onclick="restart()">اقرأ من الاول</button>
+  </div>
+</div>
+
+<script>
+let currentPage = 0;
+const totalPages = 8;
+
+function showPage(number) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("page" + number).classList.add("active");
+}
+
+function nextPage() {
+  if (currentPage < totalPages - 1) {
+    currentPage++;
+    showPage(currentPage);
+  }
+}
+
+function restart() {
+  currentPage = 0;
+  showPage(currentPage);
+}
+</script>
+
+</body>
+</html>
